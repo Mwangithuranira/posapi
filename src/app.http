@@ -1,0 +1,342 @@
+### TEST ROUTE
+GET https://rental-rides-api.azurewebsites.net/
+
+
+### GET ALL USERS
+GET http://localhost:8080/users
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyOSwibmFtZSI6IkJyaWFuIEtlbWJvaSIsImVtYWlsIjoiYmtlbWJvaTU5MEBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJhZGRyZXNzIjoiMTQzIGtlcnVnb3lhIiwiZXhwaXJlIjoxNzIwNTk3NDE4fQ.krvriNuB_uoD91ZMRvAvdjN4Mpy_xkyH9fAep5V75Os
+
+### CREATE USER
+
+POST http://localhost:8080/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "full_name": "Brian Kemboi",
+    "email": "bkemboi590@gmail.com",
+    "contact_phone": "0768353360",
+    "address": "143 kerugoya",
+    "role": "admin",
+    "password": "adminpass"
+}
+
+
+
+### UPDATE USER BY ID
+PUT http://localhost:8080/users/8 HTTP/1.1
+Content-Type: application/json
+
+{
+    "full_name": "test kabish ",
+    "email": "test57@gmail.com",
+    "contact_phone": "0712345678",
+    "address": "1234, Embu",
+    "role": "user",
+    "password": "testpass"
+}	
+
+### DELETE USER BY ID
+DELETE http://localhost:8080/users/28
+
+### GET USER BY ID
+GET http://localhost:8080/users/60
+
+### CREATE USER
+POST http://localhost:8080/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "full_name": "test name",
+    "email": "testing@gmail.com",
+    "contact_phone": "0712345678",
+    "address": "1234, Embu",
+    "role": "user",
+    "password": "123456"
+}
+
+### UPDATE USER BY ID
+PUT http://localhost:8080/users/8 HTTP/1.1
+Content-Type: application/json
+
+{
+    "full_name": "test kabish ",
+    "email": "test57@gmail.com",
+    "contact_phone": "0712345678",
+    "address": "1234, Embu",
+    "role": "user",
+    "password": "testpass"
+}	
+
+### DELETE USER BY ID
+DELETE http://localhost:8080/users/6
+
+
+### LOGIN
+POST http://localhost:8080/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "testing@gmail.com",
+    "password": "123456"
+}
+
+
+### GET ALL VEHICLE SPECIFICATIONS
+GET http://localhost:8080/vehicleSpecifications
+
+### GET VEHICLE SPECIFICATION BY ID
+GET http://localhost:8080/vehicleSpecifications/3
+
+### CREATE VEHICLE SPECIFICATION
+POST http://localhost:8080/vehicleSpecifications HTTP/1.1
+Content-Type: application/json
+
+{
+    "manufacturer": "Toyotaaa",
+    "model": "Corollaaa",
+    "year": 2018,
+    "fuel_type": "Petrolaa",
+    "engine_capacity": "1800cc",
+    "transmission": "Automatic",
+    "seating_capacity": 5,
+    "color": "White",
+    "features": "Air Conditioning, Power Steering, Anti-lock Braking System"
+}
+
+### UPDATE VEHICLE SPECIFICATION BY ID
+PUT http://localhost:8080/vehicleSpecifications/3 HTTP/1.1
+Content-Type: application/json
+
+{
+    "manufacturer": "Toaaa",
+    "model": "Cache-Control: ",
+    "year": 2018,
+    "fuel_type": "Paaaet",
+    "engine_capacity": "1800cc",
+    "transmission": "Autom",
+    "seating_capacity": 5,
+    "color": "White",
+    "features": "Air Conditioning"
+}
+
+### DELETE VEHICLE SPECIFICATION BY ID
+DELETE http://localhost:8080/vehicleSpecifications/3
+
+
+
+
+### GET ALL VEHICLES
+GET http://localhost:8080/vehicles
+
+### GET VEHICLE BY ID
+GET http://localhost:8080/vehicles/3
+
+### CREATE VEHICLE
+POST http://localhost:8080/vehicles HTTP/1.1
+Content-Type: application/json
+
+{
+    "vehicleSpec_id": 1,
+    "rental_rate": "50.00",
+    "availability": false
+}
+
+### UPDATE VEHICLE BY ID
+PUT http://localhost:8080/vehicles/3 HTTP/1.1
+Content-Type: application/json
+
+{
+    "vehicleSpec_id": 1,
+    "rental_rate": "5000.00",
+    "availability": true
+}
+
+### DELETE VEHICLE BY ID
+DELETE http://localhost:8080/vehicles/3
+
+
+### GET ALL LOCATIONS
+GET http://localhost:8080/locations
+
+### GET LOCATION BY ID
+GET http://localhost:8080/locations/3
+
+### CREATE LOCATION
+
+POST http://localhost:8080/locations HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Nairobi HEEEY  Branch",
+    "address": "1234 Main St, Nairobi",
+    "contact_phone": "0712345678"
+}
+
+### UPDATE LOCATION BY ID
+PUT http://localhost:8080/locations/3 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Nairobi Branch",
+    "address": "1234 Main St, Nairobi",
+    "contact_phone": "0712345678"
+}
+
+### DELETE LOCATION BY ID
+DELETE http://localhost:8080/locations/3
+
+
+### GET ALL BOOKINGS
+GET http://localhost:8080/bookings
+
+### GET BOOKING BY ID
+GET http://localhost:8080/bookings/4
+
+### CREATE BOOKING
+POST http://localhost:8080/bookings HTTP/1.1
+Content-Type: application/json
+
+{
+    "user_id": 1,
+    "vehicle_id": 1,
+    "location_id": 1,
+    "booking_date": "2021-06-01",
+    "return_date": "2021-06-08",
+    "total_amount": "36.00",
+    "booking_status": "reaaly"
+}
+
+### UPDATE BOOKING BY ID
+PUT http://localhost:8080/bookings/4 HTTP/1.1
+Content-Type: application/json
+
+{
+    "user_id": 1,
+    "vehicle_id": 1,
+    "location_id": 1,
+    "booking_date": "2021-06-01",
+    "return_date": "2021-06-10",
+    "total_amount": "36000.00",
+    "booking_status": "reaaaaaaaaaaaaaaaaaaly"
+}
+
+### DELETE BOOKING BY ID
+DELETE https://rental-rides-api.azurewebsites.net/41
+
+### GET USER BOOKING
+GET http://localhost:8080/bookings/user/1
+
+### GET ALL USER BOOKINGS
+GET http://localhost:8080/bookings/user/all/1
+
+
+
+###PAYMENTS
+### GET ALL PAYMENTS
+GET http://localhost:8080/vehiclesSpecs
+
+### GET PAYMENT BY ID
+GET http://localhost:8080/payments/1
+
+### CREATE PAYMENT
+POST http://localhost:8080/payments HTTP/1.1
+Content-Type: application/json
+
+{
+    "booking_id": 1,
+    "amount": "35000.00",
+    "payment_status": "Completed hfg",
+    "payment_date": "2021-06-01",
+    "payment_method": "Credit Cardfddg",
+    "transaction_id": "TXN123456"
+}
+
+### UPDATE PAYMENT BY ID
+PUT http://localhost:8080/payments/3 HTTP/1.1
+Content-Type: application/json
+
+{
+    "booking_id": 1,
+    "amount": "35000.00",
+    "payment_status": "Comple",
+    "payment_date": "2021-06-01",
+    "payment_method": "Credit",
+    "transaction_id": "TXN123456"
+}
+
+### DELETE PAYMENT BY ID
+DELETE http://localhost:8080/payments/3
+
+
+### GET ALL SUPPORT TICKETS
+GET http://localhost:8080/support
+
+### GET SUPPORT TICKET BY ID
+GET http://localhost:8080/support/3
+
+### CREATE SUPPORT TICKET
+POST http://localhost:8080/support HTTP/1.1
+Content-Type: application/json
+
+{
+    "user_id": 1,
+    "subject": "Test Subject",
+    "description": "Test Description",
+    "status": "Open"
+}
+
+### UPDATE SUPPORT TICKET BY ID
+PUT http://localhost:8080/support/3 HTTP/1.1
+Content-Type: application/json
+
+{
+    "user_id": 1,
+    "subject": "Test Subject",
+    "description": "Test Description",
+    "status": "Closed"
+}
+
+### DELETE SUPPORT TICKET BY ID
+DELETE http://localhost:8080/support/3
+
+### GET USER SUPPORT TICKET
+GET http://localhost:8080/supportticket/user/1 
+
+### GET ALL USER SUPPORT TICKETS
+GET http://localhost:8080/supporttickets/user/1
+
+
+### GET ALL FLEET MANAGEMENT
+GET http://localhost:8080/fleet
+
+### GET FLEET MANAGEMENT BY ID
+GET http://localhost:8080/fleet/3
+
+### CREATE FLEET MANAGEMENT
+POST http://localhost:8080/fleet HTTP/1.1
+Content-Type: application/json
+
+{
+    "vehicle_id": 1,
+    "acquisition_date": "2021-06-01",
+    "depreciation_rate": "10.00",
+    "current_value": "400000.00",
+    "maintenance_cost": "5000.00",
+    "status": "hahhaa"
+}
+
+### UPDATE FLEET MANAGEMENT BY ID
+PUT http://localhost:8080/fleet/3 HTTP/1.1
+Content-Type: application/json
+
+{
+    "vehicle_id": 1,
+    "acquisition_date": "2021-06-01",
+    "depreciation_rate": "10.00",
+    "current_value": "400000.00",
+    "maintenance_cost": "5000.00",
+    "status": "Inactive"
+}
+
+### DELETE FLEET MANAGEMENT BY ID
+DELETE http://localhost:8080/fleet/3
